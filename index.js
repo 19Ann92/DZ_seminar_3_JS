@@ -29,28 +29,75 @@
 // Пользователь с клавиатуры вводит 3 числа, необходимо создать функцию,
 // которая определяет максимальное значение среди этих чисел
 
-let numOne = +prompt("Введите первое число");
+// let numOne = +prompt("Введите первое число");
 
-let numTwo = +prompt("Введите второе число");
+// let numTwo = +prompt("Введите второе число");
 
-let numThree = +prompt("Введите третье число");
+// let numThree = +prompt("Введите третье число");
 
-function maximumNumber(numOne, numTwo, numThree) {
-  let result = 0;
+// function maximumNumber(numOne, numTwo, numThree) {
+//   let result = 0;
+//   if (numOne > numTwo) {
+//     if (numOne > numThree) {
+//       result = numOne;
+//     } else {
+//       result = numThree;
+//     }
+//   } else if (numTwo > numThree) {
+//     result = numTwo;
+//   } else {
+//     result = numThree;
+//   }
+//   return result;
+// }
+
+// let result = maximumNumber(numOne, numTwo, numThree);
+
+// console.log(`Максимальное число ${result}`);
+
+// Задание 4
+// Необходимо реализовать четыре функции, каждая функция должна принимать
+// по два числа и выполнять одну из операций (каждая функция выполняет одну из них):
+// 1. Сложение
+// 2. Разность
+// 3. Умножение
+// 4. Деление
+// Необходимо сделать так, чтобы функция вернула число, например выражение
+// console.log(sum(2, 6)); должно вывести число 8 в консоль (sum - функция сложения
+// в данном примере, ваши названия функций могут отличаться). Округлять значения,
+// которые возвращают функции не нужно, однако, обратите внимание на разность,
+// функция должна вычесть из большего числа меньшее, либо вернуть 0, если числа
+// равны. Функциям всегда передаются корректные числа, проверки на NaN, Infinity
+// делать не нужно.
+
+const sum = (numOne, numTwo) => numOne + numTwo;
+
+console.log(sum(5, 3));
+
+function subtract(numOne, numTwo) {
   if (numOne > numTwo) {
-    if (numOne > numThree) {
-      result = numOne;
-    } else {
-      result = numThree;
-    }
-  } else if (numTwo > numThree) {
-    result = numTwo;
+    result = numOne - numTwo;
+  } else if (numTwo > numOne) {
+    result = numTwo - numOne;
   } else {
-    result = numThree;
+    result = 0;
   }
   return result;
 }
 
-let result = maximumNumber(numOne, numTwo, numThree);
+console.log(subtract(2, 5));
 
-console.log(`Максимальное число ${result}`);
+const composition = (numOne, numTwo) => numOne * numTwo;
+
+console.log(composition(3, 5));
+
+function share(numOne, numTwo) {
+  if (numOne > numTwo) {
+    result = numOne / numTwo;
+  } else {
+    result = numTwo / numOne;
+  }
+  return result;
+}
+
+console.log(share(5, 10));
